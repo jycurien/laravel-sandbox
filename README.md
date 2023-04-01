@@ -5,8 +5,8 @@ A sandbox to play and test things with Laravel, based on Breeze starter kit with
 ## Install
 - copy .env.example to .env
 - composer install
-- php artisan key:generate
 - sail up -d
-- sail artisan migrate --seed
+- sail artisan key:generate
+- sail artisan migrate:fresh --seed
 - npm install
 - npm run dev
