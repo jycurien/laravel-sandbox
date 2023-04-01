@@ -8,9 +8,9 @@
                 <div class="text-gray-900 font-bold text-xl mb-2">{{ $post->title }}</div>
                 <p class="text-gray-700 text-base">{!! nl2br(mb_substr($post->content, 0, 100)) !!}</p>
             </div>
-            <x-nav-link :href="route('posts.show', $post->id)">
+            <x-link :href="route('posts.show', $post->id)">
                 Read More
-            </x-nav-link>
+            </x-link>
         </div>
     </div>
     @endforeach

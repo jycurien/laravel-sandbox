@@ -18,11 +18,6 @@
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         {{ __('About') }}
                     </x-nav-link>
-                @auth
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                @endauth
                 </div>
             </div>
 
@@ -53,7 +48,10 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('admin.categories.index')">
+                            {{ __('Categories') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('admin.profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
@@ -93,11 +91,6 @@
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
             {{ __('About') }}
             </x-responsive-nav-link>
-            @auth
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-            @endguest
         </div>
 
         <!-- Responsive Settings Options -->
@@ -118,7 +111,10 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
+                <x-responsive-nav-link :href="route('admin.categories.index')">
+                    {{ __('Categories') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
