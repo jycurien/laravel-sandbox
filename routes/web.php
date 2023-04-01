@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-        return view('pages.home');
+    $posts = Post::with('category', 'tags')->take(4)->latest()->get();
+    return view('pages.home', ['posts' => $posts]);
 })->name('home');
 
 Route::get('/dashboard', function () {

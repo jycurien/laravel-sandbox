@@ -1,6 +1,13 @@
 <x-app-layout>
     <div class="text-center p-16">
-        <h1 class="text-6xl font-bold">Welcome to my awesome blog!</h1>
-        <p class="mt-6 text-lg leading-8 text-gray-200">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+        <h1 class="text-6xl font-bold text-orange-600">Welcome to my incredible blog!</h1>
+        <p class="mt-6 text-lg leading-8 text-gray-900">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
     </div>
+
+    <hr class="mt-6 mb-6">
+
+    <h2 class="text-4xl font-bold mb-6">Latest Posts</h2>
+    @foreach ($posts as $post)
+        <div>{{ $post->title }}</div>
+    @endforeach
 </x-app-layout>
