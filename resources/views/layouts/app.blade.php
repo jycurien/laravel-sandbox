@@ -31,6 +31,10 @@
             <main class="mt-6 mb-6 flex-1 container mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
                 {{ $slot }}
             </main>
+
+            <footer class="bg-white p-4">
+                <p class="text-center">&copy; 2023</p>
+            </footer>
         </div>
     </body>
 </html>
