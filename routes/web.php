@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\TagController as AdminTagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('categories', AdminCategoryController::class);
-//    Route::resource('tags', AdminTagController::class);
+    Route::resource('tags', AdminTagController::class);
 //    Route::resource('posts', AdminPostController::class);
 });
 
