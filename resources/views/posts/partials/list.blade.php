@@ -14,7 +14,4 @@
         </div>
     </div>
     @endforeach
-    <div class="w-full my-5 p-2">
-        {{ $posts->links() }}
-    </div>
 </div>

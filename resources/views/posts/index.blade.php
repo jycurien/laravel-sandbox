@@ -6,4 +6,8 @@
     </x-slot>
 
     @include('posts.partials.list')
+
+    <div class="w-full my-5 p-2">
+        {{ $posts->links() }}
+    </div>
 </x-app-layout>
