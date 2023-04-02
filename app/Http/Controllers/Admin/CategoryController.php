@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
    public function edit(Category $category): View
    {
-       return view('admin.categories.edit', compact('category'));
+       return view('admin.categories.edit', ['category' => $category]);
    }
 
    public function update(EditCategoryRequest $request, Category $category): RedirectResponse

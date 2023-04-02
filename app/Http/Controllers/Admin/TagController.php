@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Tag;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
@@ -14,9 +13,7 @@ class TagController extends Controller
 {
     public function index(): View
     {
-        $tags = Tag::paginate(20);
-
-        return view('admin.tags.index', compact('tags'));
+        return view('admin.tags.index', ['tags' => Tag::paginate(20)]);
     }
 
     public function create(): View
@@ -33,7 +30,7 @@ class TagController extends Controller
 
     public function edit(Tag $tag): View
     {
-        return view('admin.tags.edit', compact('tag'));
+        return view('admin.tags.edit', ['tag' => $tag]);
     }
 
     public function update(EditTagRequest $request, Tag $tag): RedirectResponse
